@@ -1,0 +1,16 @@
+INPUT(
+./release/main.o
+./release/loginwindow.o
+./release/loginnetsetwindow.o
+./release/rotatewidget.o
+./release/rotatedia.o
+./release/basewindow.o
+./release/mytitlebar.o
+./release/qrc_loginwindow.o
+./release/moc_loginwindow.o
+./release/moc_loginnetsetwindow.o
+./release/moc_rotatewidget.o
+./release/moc_rotatedia.o
+./release/moc_basewindow.o
+./release/moc_mytitlebar.o
+);

@@ -1,0 +1,16 @@
+INPUT(
+./debug/main.o
+./debug/loginwindow.o
+./debug/loginnetsetwindow.o
+./debug/rotatewidget.o
+./debug/rotatedia.o
+./debug/basewindow.o
+./debug/mytitlebar.o
+./debug/qrc_loginwindow.o
+./debug/moc_loginwindow.o
+./debug/moc_loginnetsetwindow.o
+./debug/moc_rotatewidget.o
+./debug/moc_rotatedia.o
+./debug/moc_basewindow.o
+./debug/moc_mytitlebar.o
+);
