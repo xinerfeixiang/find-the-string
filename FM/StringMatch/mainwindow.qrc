@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>StringMatch.qss</file>
+        <file>tubiao.ico</file>
+    </qresource>
+</RCC>
