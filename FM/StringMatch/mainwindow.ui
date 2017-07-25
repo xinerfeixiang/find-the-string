@@ -36,7 +36,7 @@
           <property name="sizeConstraint">
            <enum>QLayout::SetNoConstraint</enum>
           </property>
-          <item row="2" column="2">
+          <item row="2" column="4">
            <widget class="QLabel" name="label_2">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -52,7 +52,7 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="5">
+          <item row="2" column="7">
            <widget class="QPushButton" name="bt_reset">
             <property name="text">
              <string>   Reset   </string>
@@ -69,7 +69,7 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="4">
+          <item row="2" column="6">
            <widget class="QPushButton" name="bt_solve">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
@@ -82,15 +82,21 @@
             </property>
            </widget>
           </item>
-          <item row="4" column="0" colspan="6">
+          <item row="4" column="0" colspan="8">
            <widget class="QTextEdit" name="t_output">
+            <property name="styleSheet">
+             <string notr="true">font: 33pt &quot;微软雅黑&quot;;</string>
+            </property>
             <property name="readOnly">
              <bool>true</bool>
             </property>
            </widget>
           </item>
-          <item row="0" column="0" colspan="6">
+          <item row="0" column="0" colspan="8">
            <widget class="QTextEdit" name="t_input">
+            <property name="styleSheet">
+             <string notr="true">font: 33pt &quot;微软雅黑&quot;;</string>
+            </property>
             <property name="placeholderText">
              <string>Input...</string>
             </property>
@@ -113,6 +119,19 @@
            </spacer>
           </item>
           <item row="2" column="3">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="5">
            <widget class="QSpinBox" name="s_width">
             <property name="styleSheet">
              <string notr="true">font: 22pt &quot;18thCentury&quot;;</string>
@@ -123,6 +142,33 @@
             <property name="value">
              <number>10</number>
             </property>
+           </widget>
+          </item>
+          <item row="2" column="2" rowspan="2">
+           <widget class="QComboBox" name="comboBox">
+            <property name="styleSheet">
+             <string notr="true">font: 16pt &quot;微软雅黑&quot;;</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>正常</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>优雅暗橙</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>清新白蓝</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>典雅炫黑</string>
+             </property>
+            </item>
            </widget>
           </item>
          </layout>
@@ -148,6 +194,9 @@
          <layout class="QGridLayout" name="gridLayout_3">
           <item row="4" column="2">
            <widget class="QTextEdit" name="hout">
+            <property name="styleSheet">
+             <string notr="true">font: 33pt &quot;微软雅黑&quot;;</string>
+            </property>
             <property name="readOnly">
              <bool>true</bool>
             </property>
@@ -175,6 +224,9 @@
           </item>
           <item row="2" column="1" colspan="2">
            <widget class="QTextEdit" name="hin">
+            <property name="styleSheet">
+             <string notr="true">font: 33pt &quot;微软雅黑&quot;;</string>
+            </property>
             <property name="readOnly">
              <bool>true</bool>
             </property>
@@ -199,7 +251,7 @@
              </sizepolicy>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">font: 33pt &quot;微软雅黑&quot;;</string>
             </property>
            </widget>
           </item>

@@ -8,6 +8,9 @@
 #include <QMenu>
 #include <map>
 #include <QMouseEvent>
+
+
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -16,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     setWindowIcon(QIcon(":/tubiao.ico"));//设置图标
     TheIcon();
+
 }
 
 MainWindow::~MainWindow()
@@ -118,4 +122,23 @@ void MainWindow::closeEvent(QCloseEvent *event)
         systemTray ->showMessage("Tips","The program is running behind!");
         event->ignore();
     }
+}
+
+class ChangeSkin
+{
+public:
+    static void setStyle(const QString &style){
+        QFile qss_file(style);
+        qss_file.open(QFile::ReadOnly);
+        qApp -> setStyleSheet(qss_file.readAll());
+        qss_file.close();
+    }
+};
+
+void MainWindow::on_comboBox_activated(const QString &arg1)
+{
+    if( arg1 == "优雅暗橙"){ChangeSkin::setStyle(":/StringMatch.qss");}
+    if( arg1 == "清新白蓝"){ChangeSkin::setStyle(":/StringMatch1.qss");}
+    if( arg1 == "典雅炫黑"){ChangeSkin::setStyle(":/StringMatch2.qss");}
+    if( arg1 == "正常"){ChangeSkin::setStyle(":/StringMatch3.qss");}
 }

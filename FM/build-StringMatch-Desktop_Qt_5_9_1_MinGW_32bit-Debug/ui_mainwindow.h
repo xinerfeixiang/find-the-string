@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -43,7 +44,9 @@ public:
     QTextEdit *t_output;
     QTextEdit *t_input;
     QSpacerItem *horizontalSpacer;
+    QSpacerItem *horizontalSpacer_2;
     QSpinBox *s_width;
+    QComboBox *comboBox;
     QLabel *status_1;
     QWidget *tab2;
     QGridLayout *gridLayout_4;
@@ -93,12 +96,12 @@ public:
         label_2->setSizePolicy(sizePolicy1);
         label_2->setStyleSheet(QStringLiteral("font: 20pt \"18thCentury\";"));
 
-        gridLayout->addWidget(label_2, 2, 2, 1, 1);
+        gridLayout->addWidget(label_2, 2, 4, 1, 1);
 
         bt_reset = new QPushButton(tab1);
         bt_reset->setObjectName(QStringLiteral("bt_reset"));
 
-        gridLayout->addWidget(bt_reset, 2, 5, 1, 1);
+        gridLayout->addWidget(bt_reset, 2, 7, 1, 1);
 
         label = new QLabel(tab1);
         label->setObjectName(QStringLiteral("label"));
@@ -114,22 +117,28 @@ public:
         sizePolicy2.setHeightForWidth(bt_solve->sizePolicy().hasHeightForWidth());
         bt_solve->setSizePolicy(sizePolicy2);
 
-        gridLayout->addWidget(bt_solve, 2, 4, 1, 1);
+        gridLayout->addWidget(bt_solve, 2, 6, 1, 1);
 
         t_output = new QTextEdit(tab1);
         t_output->setObjectName(QStringLiteral("t_output"));
+        t_output->setStyleSheet(QString::fromUtf8("font: 33pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         t_output->setReadOnly(true);
 
-        gridLayout->addWidget(t_output, 4, 0, 1, 6);
+        gridLayout->addWidget(t_output, 4, 0, 1, 8);
 
         t_input = new QTextEdit(tab1);
         t_input->setObjectName(QStringLiteral("t_input"));
+        t_input->setStyleSheet(QString::fromUtf8("font: 33pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
 
-        gridLayout->addWidget(t_input, 0, 0, 1, 6);
+        gridLayout->addWidget(t_input, 0, 0, 1, 8);
 
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout->addItem(horizontalSpacer, 2, 1, 1, 1);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_2, 2, 3, 1, 1);
 
         s_width = new QSpinBox(tab1);
         s_width->setObjectName(QStringLiteral("s_width"));
@@ -137,7 +146,13 @@ public:
         s_width->setMaximum(1000);
         s_width->setValue(10);
 
-        gridLayout->addWidget(s_width, 2, 3, 1, 1);
+        gridLayout->addWidget(s_width, 2, 5, 1, 1);
+
+        comboBox = new QComboBox(tab1);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+        comboBox->setStyleSheet(QString::fromUtf8("font: 16pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
+
+        gridLayout->addWidget(comboBox, 2, 2, 2, 1);
 
 
         gridLayout_2->addLayout(gridLayout, 0, 0, 1, 1);
@@ -160,6 +175,7 @@ public:
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
         hout = new QTextEdit(tab2);
         hout->setObjectName(QStringLiteral("hout"));
+        hout->setStyleSheet(QString::fromUtf8("font: 33pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         hout->setReadOnly(true);
 
         gridLayout_3->addWidget(hout, 4, 2, 1, 1);
@@ -178,6 +194,7 @@ public:
 
         hin = new QTextEdit(tab2);
         hin->setObjectName(QStringLiteral("hin"));
+        hin->setStyleSheet(QString::fromUtf8("font: 33pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         hin->setReadOnly(true);
 
         gridLayout_3->addWidget(hin, 2, 1, 1, 2);
@@ -195,7 +212,7 @@ public:
         sizePolicy3.setVerticalStretch(0);
         sizePolicy3.setHeightForWidth(hlist->sizePolicy().hasHeightForWidth());
         hlist->setSizePolicy(sizePolicy3);
-        hlist->setStyleSheet(QStringLiteral(""));
+        hlist->setStyleSheet(QString::fromUtf8("font: 33pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
 
         gridLayout_3->addWidget(hlist, 1, 0, 4, 1);
 
@@ -230,6 +247,13 @@ public:
         label->setText(QApplication::translate("MainWindow", "Result:", Q_NULLPTR));
         bt_solve->setText(QApplication::translate("MainWindow", "   Match   ", Q_NULLPTR));
         t_input->setPlaceholderText(QApplication::translate("MainWindow", "Input...", Q_NULLPTR));
+        comboBox->clear();
+        comboBox->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "\346\255\243\345\270\270", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "\344\274\230\351\233\205\346\232\227\346\251\231", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "\346\270\205\346\226\260\347\231\275\350\223\235", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "\345\205\270\351\233\205\347\202\253\351\273\221", Q_NULLPTR)
+        );
         status_1->setText(QApplication::translate("MainWindow", "Ready.", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab1), QApplication::translate("MainWindow", "Mathcer", Q_NULLPTR));
         label_4->setText(QApplication::translate("MainWindow", "Output", Q_NULLPTR));

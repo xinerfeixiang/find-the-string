@@ -2,5 +2,8 @@
     <qresource prefix="/">
         <file>StringMatch.qss</file>
         <file>tubiao.ico</file>
+        <file>StringMatch1.qss</file>
+        <file>StringMatch2.qss</file>
+        <file>StringMatch3.qss</file>
     </qresource>
 </RCC>
