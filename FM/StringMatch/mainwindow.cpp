@@ -41,15 +41,15 @@ void MainWindow::on_bt_solve_clicked()
 {
     string str = ui->t_input->toPlainText().toStdString();
     if(str.empty()) {
-        QMessageBox::information(this, "Infomation", "Empty input: please enter an vaild string.");
+        QMessageBox::information(this, "Infomation", "Empty input: please enter a valid string.");
         return;
     }
     for(int i = 0; i < str.size(); i++) if(str[i] < '0' || str[i] > '9') {
-        QMessageBox::information(this, "Infomation", "Invaild string: only numbers are allowed.");
+        QMessageBox::information(this, "Infomation", "Invalid string: only numbers are allowed.");
         return;
     }
     if(str.length() > 600) if(QMessageBox::question(this, "Query",
-             "Huge input: it may takes very long time to process, continue?",
+             "Large input: it may takes very long time to process, continue?",
               QMessageBox::Yes|QMessageBox::No) == QMessageBox::No) return;
 
     QElapsedTimer timer;
@@ -119,7 +119,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
     if(systemTray -> isVisible())
     {
         hide();
-        systemTray ->showMessage("Tips","The program is running behind!");
+        systemTray ->showMessage("Tips","The program is now running in background!");
         event->ignore();
     }
 }
